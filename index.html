@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="icon" href="" />
+
+    <title>Teste FrontEnd</title>
+
+    <link href="./css/styles.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="./js/viacep.min.js"></script>
+    <script type="text/javascript" src="./js/fieldcheck.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.13/jquery.mask.min.js"></script>
+    <link href="./bootstrap/bootstrap.min.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <h1 class="navbar-brand">FrontEnd</h1>
+    </nav>
+
+    <main role="main" class="container">
+      <h1 class="table-title">Tabela de Cadastro</h1>
+
+      <div class="Table-Main">
+        <form
+          action="javascript:alert(this === window);"
+          class="needs-validation"
+          novalidate
+        >
+          <div class="container"></div>
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nome"
+                  placeholder="Nome"
+                  name="nome"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="datanasc">Data de Nascimento:</label>
+                <input
+                  type="date"
+                  class="form-control"
+                  id="datanasc"
+                  placeholder="Data de Nascimento"
+                  name="datanasc"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="cpf">CPF:</label>
+                <input
+                  type="text"
+                  class="form-control cpf-input"
+                  id="cpf-input"
+                  placeholder="000.000.000-00"
+                  name="cpf-input"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="rg">RG:</label>
+                <input
+                  type="text"
+                  class="form-control rg-input"
+                  id="rg"
+                  placeholder="RG"
+                  name="rg"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="nomemae">Nome da Mãe:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="nomemae"
+              placeholder="Nome da Mãe"
+              name="nomemae"
+              required
+            />
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="cep">CEP:</label>
+                <input
+                  type="text"
+                  class="form-control cep-input"
+                  id="cep"
+                  placeholder="CEP"
+                  name="cep"
+                  value=""
+                  size="10"
+                  maxlength="9"
+                  onblur="pesquisacep(this.value);"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="logradouro">Logradouro:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="logradouro"
+                  placeholder="Logradouro"
+                  name="logradouro"
+                  value=""
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col col-lg-2">
+              <div class="form-group">
+                <label for="numero">Numero(Opcional):</label>
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numero"
+                  name="numero"
+                  placeholder="numero"
+                  required
+                />
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="form-group">
+                <label for="complemento">Complemento:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="rua"
+                  placeholder="Complemento"
+                  name="rua"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="bairro">Bairro:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="bairro"
+              placeholder="Bairro"
+              name="bairro"
+              required
+            />
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="cidade">Cidade:</label>
+                <input
+                  type="Text"
+                  class="form-control"
+                  id="cidade"
+                  placeholder="Cidade"
+                  name="cidade"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col col-lg-2">
+              <div class="form-group">
+                <label for="uf">Estado:</label>
+                <input
+                  type="text"
+                  class="form-control uf-input"
+                  id="uf"
+                  placeholder="Estado"
+                  name="uf"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <div class="form-group">
+                <label for="email">E-Mail:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email"
+                  placeholder="E-mail"
+                  name="email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="celular">Celular:</label>
+                <input
+                  type="text"
+                  class="form-control cel-input"
+                  id="celular"
+                  placeholder="Celular"
+                  name="celular"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="curso">Curso:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="curso"
+              placeholder="Curso"
+              name="curso"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="campus">Campus:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="campus"
+              placeholder="Campus"
+              name="campus"
+              required
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </main>
+
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>'
+        );
+    </script>
+    <script>
+      jQuery(document).ready(function () {
+        jQuery(".cpf-input").mask("000.000.000-00");
+        jQuery(".cep-input").mask("00000-000");
+        jQuery(".cel-input").mask("(00)0 0000-0000");
+        jQuery(".rg-input").mask("0000000");
+        jQuery(".uf-input").mask("AA");
+      });
+    </script>
+
+    <script src="./bootstrap/popper.min.js.download"></script>
+    <script src="./bootstrap/bootstrap.min.js.download"></script>
+  </body>
+</html>
